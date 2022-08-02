@@ -16,13 +16,7 @@ SELECT first_name, last_name FROM actor a WHERE NOT EXISTS (SELECT * FROM film_a
 SELECT * FROM customer c WHERE 1=(SELECT COUNT(*)FROM rental r WHERE c.customer_id = r.customer_id); 
 
 
-SELECT first_name, last_name, (SELECT COUNT(*) 
-FROM rental r 
-WHERE c.customer_id = r.customer_id) 
-FROM customer c 
-WHERE 1<(SELECT COUNT(*) 
-FROM rental r 
-WHERE c.customer_id = r.customer_id);
+SELECT first_name, last_name, (SELECT COUNT(*) FROM rental r WHERE c.customer_id = r.customer_id)FROM customer c WHERE 1<(SELECT COUNT(*)FROM rental r WHERE c.customer_id = r.customer_id);
 
 
 SELECT first_name, last_name FROM actor a WHERE a.actor_id IN (SELECT actor_id FROM film_actor fa WHERE fa.film_id IN (SELECT f.film_id FROM film f WHERE f.title LIKE 'BETRAYED REAR' OR f.title LIKE 'CATCH AMISTAD'));
