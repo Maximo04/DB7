@@ -37,7 +37,7 @@ select
 from address a
 inner join city ci using(city_id)
 inner join country co on ci.country_id = co.country_id
-where co.country = 'Argentina';
+where co.country = 'United States';
 
 select * from customer where first_name = 'Martin';
 
