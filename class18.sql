@@ -84,7 +84,7 @@ DELIMITER ;
 CALL customer_list('Brasil',@proced);
 
 SELECT @proced;
-/*@proced es la lista de los procedures segun lo que entendi
+/*@proced es una variable local
 +---------+
 | @proced |
 +---------+
